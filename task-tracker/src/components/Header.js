@@ -3,12 +3,16 @@ import Button from './Button'
 
 
 const Header = ( {title} ) => {
+
+	const consoleC = () => {
+		console.log('see the console');
+	}
 	return (
 		<>
 		<h1 style={inlinEStylExample}> PP </h1> 
 		<header className="header">
 			<h1>{title}</h1>
-			<Button color="green" text="zid akh zid"/>
+			<Button color="green" text="zid akh zid" click={consoleC}/>
 		</header>
 		</>
 	)
