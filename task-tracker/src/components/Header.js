@@ -2,17 +2,18 @@ import PropTypes from 'prop-types'
 import Button from './Button'
 
 
-const Header = ( {title} ) => {
+const Header = ( {title, onSet, btnSt} ) => {
 
-	const consoleC = () => {
-		console.log('see the console');
-	}
+	// const consoleC = () => {
+	// 	console.log('see the console')
+		
+	// }
 	return (
 		<>
 		<h1 style={inlinEStylExample}> PP </h1> 
 		<header className="header">
 			<h1>{title}</h1>
-			<Button color="green" text="zid akh zid" click={consoleC}/>
+			<Button color={btnSt ? "gray" : "green"} text={btnSt ? "sed l9lawi" : "zid akh zid"} click={onSet}/>
 		</header>
 		</>
 	)
