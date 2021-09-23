@@ -1,29 +1,34 @@
 import Header from './components/Header'
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
-import { useState } from 'react'
+import { useState , useEffect} from 'react'
 
 function App() {
 	//states of button
 	const [btnState, setBtnState] = useState(false);
 	//...states of data
-	const [tasks, setTasks] = useState(
-		[
-			{
-				id: 1,
-				text: 'do something',
-				day: 'lyuma',
-				reminder: false,
-			},
-			{
-				id: 2,
-				text: 'do something 2',
-				day: 'ghedda',
-				reminder: true,
-			},
-		]
-	)
+	const [tasks, setTasks] = useState([])
 
+	// http://localhost:5000/tasks
+	// to see db.json on the browser
+
+
+	// useEffect https://dmitripavlutin.com/react-useeffect-explanation/
+	// the empty [] in use effect are used to make the effect happen every refrech(initial)
+	useEffect( () => {
+		const dataFromBack = fetchTasks();
+		setTasks(dataFromBack);
+		console.log(dataFromBack)
+		}, [])
+	
+
+	const fetchTasks = async () => {
+		const res = await fetch('http://localhost:5000/tasks');
+		const tData = await res.json();
+		setTasks(tData)
+
+		return tData;
+	}
 	// delete task
 	const deleteTask = (id) => {
 		console.log('delete' ,id);

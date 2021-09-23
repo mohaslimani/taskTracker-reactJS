@@ -1,0 +1,22 @@
+{
+  "tasks": [
+	{
+		"id" : 1,
+		"text" : "ddo something",
+		"day" : "lyuma",
+		"reminder" : false
+	},
+	{
+		"id" : 2,
+		"text" : "ddddo something 2",
+		"day" : "ghedda",
+		"reminder" : true
+	},
+	{
+		"id" : 3,
+		"text" : "ddddo something 3",
+		"day" : "man3raf",
+		"reminder" : true
+	}
+  ]
+}
