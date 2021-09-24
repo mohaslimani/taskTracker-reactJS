@@ -23,9 +23,9 @@ const AddTask = ({ onAdd }) => {
 		// exactly
 		// what it does exactly is to reset the consts(text, day,reminder)
 		// reseting the text will make it empty, but we prevented any save with an empty text(task)
-		setTxt();
-		setDay();
-		setReminder();
+		setTxt('');
+		setDay('');
+		setReminder(false);
 	}
 
 	return (
