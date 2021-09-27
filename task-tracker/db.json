@@ -10,16 +10,22 @@
       "id": 2,
       "text": "ddddo something 2",
       "day": "ghedda",
-      "reminder": true
+      "reminder": false
     },
     {
-      "text": "d",
+      "text": "chi7aja",
+      "day": "chinhar",
+      "reminder": true,
+      "id": 3
+    },
+    {
+      "text": "dj",
       "day": "d",
       "reminder": false,
       "id": 4
     },
     {
-      "text": "a",
+      "text": "d",
       "day": "",
       "reminder": false,
       "id": 5

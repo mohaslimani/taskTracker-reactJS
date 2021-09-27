@@ -1,6 +1,9 @@
 import Header from './components/Header'
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
+import Footer from './components/Footer';
+import About from './components/About';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { useState , useEffect} from 'react'
 
 function App() {
@@ -93,21 +96,34 @@ function App() {
   return (
 	//   every return has to be one single element and everything will be inside of it.
 	// if u dont want to embedd your app in a div u can embed it in nothing element <> </>
-	<>
-    <div className="container">
-		<Header title="app d zeeb." onSet={() => setBtnState(!btnState)} btnSt={btnState}/>
-		
-		{btnState === true && <AddTask onAdd={addTask}/> }
-		
-		{
-			(tasks.length > 0) ?
-			<Tasks tasks={tasks} 
-			onDelete={deleteTask}
-			toggleRem={reminder}/>
-			: 'rtaaa7 makin ta task'
-		}
-    </div>
-	</>
+    <Router>
+		<div className="container">
+
+			<Header title="app d zeeb." onSet={() => setBtnState(!btnState)} btnSt={btnState}/>
+			{/* same below but we replaced component with 'exact render' bc we need our props(we used hooks here) */}
+
+			<Route path="/" exact render={
+				(props) => ( //check here why we are using parantheses() instead of {}
+					<>
+						{btnState === true && <AddTask onAdd={addTask}/> }
+					
+						{
+							(tasks.length > 0) ?
+							<Tasks tasks={tasks} 
+							onDelete={deleteTask}
+							toggleRem={reminder}/>
+							: 'rtaaa7 makin ta task'
+						}
+					</>
+				)
+			}/>
+			
+			{/* this Route will be replaced by the component About if http://localhost:3000/about */}
+			<Route path="/about" component={About}/> 
+			<Footer />
+    	</div>
+	</Router>
+
   );
 }
 
