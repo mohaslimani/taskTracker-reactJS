@@ -22,8 +22,8 @@ Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any errors/live request in the console.[http://localhost:5000/tasks](http://localhost:5000/tasks)
-See the section about [json-server](https://github.com/typicode/json-server) for more information.
-See {json-server --watch db.json --port 500} in [package.json](https://github.com/mohaslimani/taskTracker-reactJS/blob/main/task-tracker/package.json)
+<br>See the section about [json-server](https://github.com/typicode/json-server) for more information.
+<br>See {json-server --watch db.json --port 500} in [package.json](https://github.com/mohaslimani/taskTracker-reactJS/blob/main/task-tracker/package.json)
 
 ### `npm test`
 
