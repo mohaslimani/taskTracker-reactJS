@@ -1,19 +1,20 @@
 import PropTypes from 'prop-types'
+import { useLocation } from 'react-router'
 import Button from './Button'
 
 
 const Header = ( {title, onSet, btnSt} ) => {
 
-	// const consoleC = () => {
-	// 	console.log('see the console')
-		
-	// }
+	const location = useLocation();
 	return (
 		<>
 		<h1 style={inlinEStylExample}> PP </h1> 
 		<header className="header">
 			<h1>{title}</h1>
-			<Button color={btnSt ? "gray" : "green"} text={btnSt ? "sed l9lawi" : "zid akh zid"} click={onSet}/>
+			{
+				location.pathname === '/' &&
+				<Button color={btnSt ? "gray" : "green"} text={btnSt ? "sed l9lawi" : "zid akh zid"} click={onSet}/>
+			}
 		</header>
 		</>
 	)
