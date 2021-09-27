@@ -1,6 +1,6 @@
 # Task tracker
 
-This project was created as a duplicate frome TraversyMedia
+This project was created as a duplicate from TraversyMedia
 
 ## Available Scripts
 
